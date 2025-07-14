@@ -55,4 +55,4 @@ var countAsterisks = function(s) {
     }
 
     return count;
-};
+};rever
