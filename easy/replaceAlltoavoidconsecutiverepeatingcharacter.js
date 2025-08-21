@@ -32,6 +32,7 @@
 
 //solution
 
+
 /**
  * @param {string} s
  * @return {string}
@@ -42,6 +43,7 @@ var modifyString = function(s) {
     let targetIndex = s.indexOf('?')
     while(targetIndex >= 0){
         for(let i = 0; i < arr.length; i++){
+            if(targetIndex<0) break;
         if(arr[i] !== s.charAt(targetIndex-1) && arr[i] !== s.charAt(targetIndex+1)){
             s = s.replace('?', arr[i])
         }
