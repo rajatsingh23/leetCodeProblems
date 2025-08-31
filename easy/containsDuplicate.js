@@ -64,3 +64,14 @@ var containsDuplicate = function(nums) {
     return false;
 };
 
+
+//solution 2 31/08/2025
+
+    nums.sort((a,b) => a - b);
+    for(let i = 0; i < nums.length; i++){
+        if(nums[i] === nums[i+1]){
+            return true;
+        }
+    }
+
+    return false;
