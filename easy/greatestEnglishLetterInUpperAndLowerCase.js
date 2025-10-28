@@ -62,4 +62,4 @@ var greatestLetter = function(s) {
     }
 
     return ''
-};
+}
