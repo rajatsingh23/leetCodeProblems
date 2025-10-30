@@ -70,3 +70,28 @@ var findWords = function(words) {
 
     return ansArr;
 };
+
+
+//imporved version using hashmaps
+
+/**
+ * @param {string[]} words
+ * @return {string[]}
+ */
+var findWords = function(words) {
+    //make three sets of each row
+    //make an ans arr to be returned
+    //loop through the words
+    //if row1 has first ch loop through the ch if it has all the ch add that to answer
+    let row1 = new Set('qwertyuiop')
+    let row2 = new Set('asdafghjkl')
+    let row3 = new Set('zxcvbnm')
+    let ans = []
+    for(let word of words){
+        const ch = word.toLowerCase().split('')
+        if(ch.every(x=> row1.has(x)) || ch.every(x=> row2.has(x)) || ch.every(x=> row3.has  (x))){
+            ans.push(word)
+        }
+    }
+    return ans;
+};
