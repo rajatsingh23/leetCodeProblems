@@ -50,9 +50,13 @@ var setZeroes = function(matrix) {
             }
         }
     }
+    let setI = new Set()
     for(let index of zeroes){
         let [i, j] = index
-        matrix[i].fill(0);
+        if(!setI.has(i)){
+             matrix[i].fill(0);
+             setI.add(i)
+        }
         i = 0;
         while(i < matrix.length){
             matrix[i][j] = 0;
