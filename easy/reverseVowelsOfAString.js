@@ -28,13 +28,6 @@
 
  
 
-// Constraints:
-
-// 1 <= s.length <= 3 * 105
-// s consist of printable ASCII characters.
-
-//solution
-
 /**
  * @param {string} s
  * @return {string}
@@ -56,9 +49,9 @@ var reverseVowels = function(s) {
             left++;
             right--;
             continue;
-        }else if(vowels.has(arr[left])){
+        }else if(vowels.has(arr[left]) && !vowels.has(arr[right])){
             right--;
-        }else if(vowels.has(arr[right])){
+        }else if(vowels.has(arr[right]) && !vowels.has(arr[left])){
             left++;
         }else{
             left++;
