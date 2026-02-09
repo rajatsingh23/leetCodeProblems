@@ -72,3 +72,5 @@ var dailyTemperatures = function(temp) {
     }
     return ans;
 };
+
+console.log(dailyTemperatures([75,78,64,79,82,65,75,83]))
