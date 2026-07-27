@@ -77,3 +77,29 @@ var pairSum = function(head) {
     }
     return ans;
 };
+
+    //without using arr;
+    let slow = head;
+    let fast = head;
+    while(fast && fast.next){
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+
+    let current = slow;
+    let prev = null;
+    while(current){
+        let next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+    }
+    let first = head;
+    let second = prev;
+    let ans = 0;
+    while(second){
+        ans = Math.max(ans, first.val + second.val);
+        first = first.next;
+        second = second.next;
+    }
+    return ans;
