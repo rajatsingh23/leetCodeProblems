@@ -57,7 +57,6 @@
 // The input is generated such that there is at least one node in the linked list that has a value not present in nums.
 
 //solution
-
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -76,20 +75,16 @@ var modifiedList = function(nums, head) {
     //return head;
     let dummy = new ListNode(-1);
     let prev = dummy;
-    let set = new Set();
-    for(let num of nums){
-        set.add(num)
-    }
+    let set = new Set(nums);
     let current = head;
     while(current){
         let val = current.val;
         if(!set.has(val)){
             prev.next = current;
-            prev = prev.next;
-        }else{
-            prev.next = current.next;
+            prev = current;
         }
         current = current.next;
     }
+    prev.next = null;
     return dummy.next;
 };
