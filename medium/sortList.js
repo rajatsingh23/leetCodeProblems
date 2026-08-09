@@ -57,6 +57,5 @@ var sortList = function(head) {
         new ListNode(num)
         tail = tail.next;
     }
-    tail.next = null;
     return dummy.next;
 };
