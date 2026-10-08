@@ -67,3 +67,28 @@ var removeOuterParentheses = function(s) {
 
     return ans;
 };
+
+//myversion
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var removeOuterParentheses = function(s) {
+    let ans = '';
+    let count = 0;
+    let initial = 0;
+    for(let i = 0; i < s.length; i++){
+        let ch = s[i];
+        if(ch == "("){
+            count++;
+        }else{
+            count--;
+        }
+        if(count === 0){
+            ans += s.slice(initial + 1, i)
+            initial = i + 1;
+        }
+    }
+    return ans;
+};
